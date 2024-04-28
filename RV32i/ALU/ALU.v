@@ -1,4 +1,4 @@
-module ALU(output reg [31:0] out, input [4:0] op, input [31:0] r1, input [31:0] r2);	//r1 represents the value stored in register1, the same goes for r2
+module ALU(output reg [31:0] out, input [3:0] op, input [31:0] r1, input [31:0] r2);	//r1 represents the value stored in register1, the same goes for r2
 	always @(*)
 		begin
 		case(op)
