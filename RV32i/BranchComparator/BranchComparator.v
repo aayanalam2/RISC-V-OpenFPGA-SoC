@@ -8,9 +8,9 @@ module BranchComparator(
 	);
 
 input [31:0] sr1;
-input [31:0] s2;
+input [31:0] sr2;
 input BrUn;
-
+input reset;
 output reg BrLT;
 output reg BrEq;
 
@@ -23,7 +23,7 @@ always @(*) begin
 	end
 	else begin
 		BrEq = 0;
-		BrLt = 0;
+		BrLT = 0;
 		//unsigned comparison
 		if(BrUn)begin
 			if(sr1 < sr2) BrLT = 1;
