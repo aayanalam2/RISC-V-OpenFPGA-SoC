@@ -43,14 +43,14 @@ begin
 				register[address] <= dataIn[7:0];
 				register[address+1] <= dataIn[15:8];
 				register[address+2] <= {8{dataIn[15]}};
-				register[address+2] <= {8{dataIn[15]}};
+				register[address+3] <= {8{dataIn[15]}};
 			end
 			010:														//Full Word
 			begin
 				register[address] <= dataIn[7:0];
 				register[address+1] <= dataIn[15:8];
 				register[address+2] <= dataIn[23:16];
-				register[address+2] <= dataIn[31:24];
+				register[address+3] <= dataIn[31:24];
 			end
 			011:														//Byte (Unsigned)
 			begin
