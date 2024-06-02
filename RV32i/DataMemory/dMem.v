@@ -31,32 +31,32 @@ begin
 		if (dMemWE == 1)											
 		begin
 			case (dMemWMode)										//Case Data Memory Write Mode
-			000:														//Byte (Signed)
+			3b'000:														//Byte (Signed)
 			begin
 				register[address] <= dataIn[7:0];
 				register[address+1] <= {8{dataIn[7]}};
 				register[address+2] <= {8{dataIn[7]}};
 				register[address+3] <= {8{dataIn[7]}};
 			end
-			001:														//Half Word (Signed)
+			3b'001:														//Half Word (Signed)
 			begin
 				register[address] <= dataIn[7:0];
 				register[address+1] <= dataIn[15:8];
 				register[address+2] <= {8{dataIn[15]}};
 				register[address+3] <= {8{dataIn[15]}};
 			end
-			010:														//Full Word
+			3b'010:														//Full Word
 			begin
 				register[address] <= dataIn[7:0];
 				register[address+1] <= dataIn[15:8];
 				register[address+2] <= dataIn[23:16];
 				register[address+3] <= dataIn[31:24];
 			end
-			011:														//Byte (Unsigned)
+			3b'011:														//Byte (Unsigned)
 			begin
 				register[address] <= dataIn[7:0];
 			end
-			100:														//Half Word (Unsigned)
+			3b'100:														//Half Word (Unsigned)
 			begin
 				register[address] <= dataIn[7:0];
 				register[address+1] <= dataIn[15:8];
